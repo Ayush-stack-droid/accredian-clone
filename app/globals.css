@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Variables */
+:root {
+  --primary: #1D6DE5;
+  --primary-dark: #1558C0;
+  --primary-light: #E8F0FD;
+}
+
+/* Base styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: white;
+  color: #1f2937; /* gray-800 */
+}
+
+/* Reusable Components */
+.btn-primary {
+  @apply bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-all duration-200;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold text-gray-900 text-center mb-3;
+}
+
+.section-subtitle {
+  @apply text-gray-500 text-center mb-10;
+}
+
+.highlight {
+  @apply text-primary;
+}
+
+.card {
+  @apply bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-all duration-300;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-delay-100 { animation-delay: 0.1s; opacity: 0; }
+.animate-delay-200 { animation-delay: 0.2s; opacity: 0; }
+.animate-delay-300 { animation-delay: 0.3s; opacity: 0; }
+.animate-delay-400 { animation-delay: 0.4s; opacity: 0; }
+.animate-delay-500 { animation-delay: 0.5s; opacity: 0; }
+
+/* Scrollbar (optional nice touch) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
+}
